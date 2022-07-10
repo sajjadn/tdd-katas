@@ -21,7 +21,8 @@ def test_should_save_store_revenue_for_single_transaction(mock_api_client,
 	transaction_pipeline.run()
 
 	mock_db_gateway.assert_called_once()
-	actual_args = mock_db_gateway.call_args.args
-	assert isinstance(actual_args[0], StoreRevenue)
-	assert actual_args[0].store_id == expected_store_id
+	actual_args = mock_db_gateway.call_args
+
+	assert isinstance(actual_args[0][0], StoreRevenue)
+	assert actual_args[0][0].store_id == expected_store_id
 
