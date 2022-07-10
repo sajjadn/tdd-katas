@@ -1,7 +1,7 @@
 Fetch API response
 Save daily revenue, transactions from each store
 Save profit from each brands
-return a '0' exit code for success
+[X] return a '0' exit code for success
 return a '1' exit code for error
     - Error Case1
     - Error Case2

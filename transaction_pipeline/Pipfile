@@ -1,0 +1,24 @@
+[[source]]
+
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+coverage = "*"
+pylint = "*"
+mypy = "*"
+
+[packages]
+jsonschema = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+unit-test = "python -m pytest -vv tests"
+coverage = "python -m coverage run -m --source $PWD pytest tests"
+coverage-report = "coverage report -m --fail-under=80"
+lint = "bash -c 'pylint src/* && pylint tests/*'"
+typecheck = "mypy --ignore-missing-imports --install-types --non-interactive --show-error-codes --disallow-untyped-defs ."
