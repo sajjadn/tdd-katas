@@ -1,0 +1,34 @@
+AS A Business Analyst
+
+I NEED TO have access to the daily revenue from different stores and profit from different brands
+
+SO THAT I can make informed policy decisions
+
+Brand Identification
+Item Type="Jeans" => LEVIS
+Item Code has pattern "GA00xx" => GAP
+Item Type="Jacket" and ItemCode has pattern "PUM_xx_yy" => PUMA
+Item Type="Shoes" => NIKE
+
+Tech Approach:-
+Use the Transactions API to fetch daily transactions.
+Process the API Response and save to Reports DB
+Destination - Revenue table to have following fields:-
+Date
+Store 
+Total Revenue
+NoOfTransactions
+
+Destination - Brand Profit table to have following fields:-
+Date
+Brand 
+Total Profit
+Total Items
+
+NFR:-
+
+Process to return a '0' exit code for success and '1' return code for failure
+Retry - Return code of '400' if Transactions API is not responding
+Log total transactions, revenue per store, any errors in the process
+Process should be re-runnable (Overwrite if data exists for the same date already)
+

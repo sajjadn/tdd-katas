@@ -1,0 +1,12 @@
+Fetch API response
+Save daily revenue, transactions from each store
+Save profit from each brands
+return a '0' exit code for success
+return a '1' exit code for error
+    - Error Case1
+    - Error Case2
+return a '400' exit code for API error
+Log total transactions, revenue per store to Logfile
+Log errors in the process to Log file
+Enable rerun
+
